@@ -95,10 +95,20 @@ public class BinaryTreeDS {
         int rightNode = countOfNodes(root.right);
         return leftNode+rightNode+1;
     }
+    // Sum of nodes
+    public static int sumOfNode(Node root){
+        if(root == null){
+            return 0;
+        }
+        int leftSum = sumOfNode(root.left);
+        int rightSum = sumOfNode(root.right);
+        return leftSum+rightSum+root.data;
+    }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
+       /*
         System.out.println(root.data);
         inOrder(root);
         System.out.println();
@@ -109,5 +119,8 @@ public class BinaryTreeDS {
         levelOrder(root);
         System.out.println();
         System.out.println(countOfNodes(root));
+        System.out.println(sumOfNode(root));
+
+        */
     }
 }
