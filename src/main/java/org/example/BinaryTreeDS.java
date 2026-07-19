@@ -104,6 +104,18 @@ public class BinaryTreeDS {
         int rightSum = sumOfNode(root.right);
         return leftSum+rightSum+root.data;
     }
+
+    // height of node
+    public static int height(Node root){
+        if(root == null){
+            return 0;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        int myHeight = Math.max(leftHeight,rightHeight) + 1;
+        return myHeight;
+
+    }
     public static void main(String[] args) {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
@@ -120,7 +132,7 @@ public class BinaryTreeDS {
         System.out.println();
         System.out.println(countOfNodes(root));
         System.out.println(sumOfNode(root));
-
         */
+        System.out.println(height(root));
     }
 }
